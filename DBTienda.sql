@@ -62,3 +62,274 @@ create table DetalleFacturas (
 	constraint fk_detalle_facturas_productos foreign key (idProductos)
 		references Productos (idProductos)
 );
+
+-- CRUD --
+-- crud Clientes --
+delimiter $$
+create procedure sp_CreateCliente(
+	in p_nombreClientes varchar(64),
+	in p_email varchar(128),
+	in p_telefono varchar(12),
+	in p_DPI varchar(16)
+)
+begin
+	insert into Clientes (nombreClientes, email, telefono, DPI)
+	values (p_nombreClientes, p_email, p_telefono, p_DPI);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_ReadClientes()
+begin
+	select * from Clientes;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_UpdateCliente(
+	in p_idClientes int,
+	in p_nombreClientes varchar(64),
+	in p_email varchar(128),
+	in p_telefono varchar(12),
+	in p_DPI varchar(16)
+)
+begin
+	update Clientes
+	set nombreClientes = p_nombreClientes,
+		email = p_email,
+		telefono = p_telefono,
+		DPI = p_DPI
+	where idClientes = p_idClientes;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_DeleteCliente(in p_idClientes int)
+begin
+	delete from Clientes where idClientes = p_idClientes;
+end$$
+delimiter ;
+
+-- crud Empleados --
+delimiter $$
+create procedure sp_CreateEmpleado(
+	in p_nombreEmpleados varchar(64),
+	in p_puesto varchar(16),
+	in p_email varchar(128),
+	in p_estado ENUM('activo', 'Inactivo')
+)
+begin
+	insert into Empleados (nombreEmpleados, puesto, email, estado)
+	values (p_nombreEmpleados, p_puesto, p_email, p_estado);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_ReadEmpleados()
+begin
+	select * from Empleados;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_UpdateEmpleado(
+	in p_idEmpleados int,
+	in p_nombreEmpleados varchar(64),
+	in p_puesto varchar(16),
+	in p_email varchar(128),
+	in p_estado ENUM('activo', 'Inactivo')
+)
+begin
+	update Empleados
+	set nombreEmpleados = p_nombreEmpleados,
+		puesto = p_puesto,
+		email = p_email,
+		estado = p_estado
+	where idEmpleados = p_idEmpleados;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_DeleteEmpleado(in p_idEmpleados int)
+begin
+	delete from Empleados where idEmpleados = p_idEmpleados;
+end$$
+delimiter ;
+
+-- crud Productos --
+delimiter $$
+create procedure sp_CreateProducto(
+	in p_nombreProductos varchar(64),
+	in p_descripcion varchar(128),
+	in p_precio decimal(10,2)
+)
+begin
+	insert into Productos (nombreProductos, descripcion, precio)
+	values (p_nombreProductos, p_descripcion, p_precio);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_ReadProductos()
+begin
+	select * from Productos;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_UpdateProducto(
+	in p_idProductos int,
+	in p_nombreProductos varchar(64),
+	in p_descripcion varchar(128),
+	in p_precio decimal(10,2)
+)
+begin
+	update Productos
+	set nombreProductos = p_nombreProductos,
+		descripcion = p_descripcion,
+		precio = p_precio
+	where idProductos = p_idProductos;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_DeleteProducto(in p_idProductos int)
+begin
+	delete from Productos where idProductos = p_idProductos;
+end$$
+delimiter ;
+
+-- crud Inventario --
+delimiter $$
+create procedure sp_CreateInventario(
+	in p_idProductos int,
+	in p_cantidad int,
+	in p_estado ENUM('Disponible', 'Agotado')
+)
+begin
+	insert into Inventario (idProductos, cantidad, estado)
+	values (p_idProductos, p_cantidad, p_estado);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_ReadInventario()
+begin
+	select * from Inventario;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_UpdateInventario(
+	in p_idInventario int,
+	in p_idProductos int,
+	in p_cantidad int,
+	in p_estado ENUM('Disponible', 'Agotado')
+)
+begin
+	update Inventario
+	set idProductos = p_idProductos,
+		cantidad = p_cantidad,
+		estado = p_estado
+	where idInventario = p_idInventario;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_DeleteInventario(in p_idInventario int)
+begin
+	delete from Inventario where idInventario = p_idInventario;
+end$$
+delimiter ;
+
+-- crud Facturas -- 
+delimiter $$
+create procedure sp_CreateFactura(
+	in p_fecha date,
+	in p_total decimal(10,2),
+	in p_idClientes int,
+	in p_idEmpleados int
+)
+begin
+	insert into Facturas (fecha, total, idClientes, idEmpleados)
+	values (p_fecha, p_total, p_idClientes, p_idEmpleados);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_ReadFacturas()
+begin
+	select * from Facturas;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_UpdateFactura(
+	in p_idFacturas int,
+	in p_fecha date,
+	in p_total decimal(10,2),
+	in p_idClientes int,
+	in p_idEmpleados int
+)
+begin
+	update Facturas
+	set fecha = p_fecha,
+		total = p_total,
+		idClientes = p_idClientes,
+		idEmpleados = p_idEmpleados
+	where idFacturas = p_idFacturas;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_DeleteFactura(in p_idFacturas int)
+begin
+	delete from Facturas where idFacturas = p_idFacturas;
+end$$
+delimiter ;
+
+-- crud Detalle de Facturas -- 
+delimiter $$
+create procedure sp_CreateDetalleFactura(
+	in p_idFacturas int,
+	in p_idProductos int,
+	in p_cantidad int,
+	in p_subtotal decimal(10,2)
+)
+begin
+	insert into DetalleFacturas (idFacturas, idProductos, cantidad, subtotal)
+	values (p_idFacturas, p_idProductos, p_cantidad, p_subtotal);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_ReadDetalleFacturas()
+begin
+	select * from DetalleFacturas;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_UpdateDetalleFactura(
+	in p_idDetalles int,
+	in p_idFacturas int,
+	in p_idProductos int,
+	in p_cantidad int,
+	in p_subtotal decimal(10,2)
+)
+begin
+	update DetalleFacturas
+	set idFacturas = p_idFacturas,
+		idProductos = p_idProductos,
+		cantidad = p_cantidad,
+		subtotal = p_subtotal
+	where idDetalles = p_idDetalles;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_DeleteDetalleFactura(in p_idDetalles int)
+begin
+	delete from DetalleFacturas where idDetalles = p_idDetalles;
+end$$
+delimiter ;
