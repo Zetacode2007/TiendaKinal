@@ -1,0 +1,82 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); /* estilo oscuro neón */
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #ffffff;
+}
+
+/* TableView retro */
+.table-view {
+    -fx-background-color: #111;
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, cyan, 5, 0.5, 0, 0);
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #00ffff;
+    -fx-text-fill: black;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 30px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: #00ffff22;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #ff00ff44;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #ff00cc, #333399);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, magenta, 10, 0.6, 0, 0);
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #333399, #ff00cc);
+}
+
+.text-field {
+    -fx-background-color: #222;
+    -fx-text-fill: #00ffff;
+    -fx-border-color: #00ffff;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+.grid-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-border-color: #ff00ff;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-padding: 20;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.label {
+    -fx-font-size: 28px;
+}
+
+.button:pressed {
+    -fx-translate-y: 2px; /* lo mueve hacia abajo */
+    -fx-background-color: #cc66ff; /* color más oscuro o distinto */
+    -fx-effect: innershadow(gaussian, black, 3, 0.3, 0, 1);
+}

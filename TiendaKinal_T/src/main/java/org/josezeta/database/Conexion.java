@@ -14,7 +14,7 @@ public class Conexion {
     //Connection
     private Connection conexion;
     //Cadena de conexion
-     private String url = "jdbc:mysql://127.0.0.1:3306/DBVeterinaria?useSSL=false";
+     private String url = "jdbc:mysql://127.0.0.1:3306/DBTiendaKinal?useSSL=false";
      private String user = "root";
      private String password = "root";
      private String driver = "com.mysql.jdbc.Driver";
