@@ -185,7 +185,7 @@ public class ClienteController implements Initializable {
             return;
         }
         try {
-            CallableStatement enunciado = Conexion.getInstancia().getConexion().prepareCall("{call sp_EditarCliente(?,?,?,?,?)}");
+            CallableStatement enunciado = Conexion.getInstancia().getConexion().prepareCall("{call sp_ActualizarCliente(?,?,?,?,?)}");
             enunciado.setInt(1, modeloCliente.getCodigoCliente());
             enunciado.setString(2, modeloCliente.getNombreCliente());
             enunciado.setString(3, modeloCliente.getTelefono());

@@ -78,6 +78,7 @@ begin
 	values (p_nombreClientes, p_email, p_telefono, p_DPI);
 end$$
 delimiter ;
+call sp_AgregarCliente("Juan Ceballos","juanCeballos@gmail.com","45794555","0203 04050 1234");
 
 delimiter $$
 create procedure sp_ListarClientes()
