@@ -1,3 +1,4 @@
+drop database if exists DBTiendaKinal;
 create database DBTiendaKinal;
 use DBTiendaKinal;
 
@@ -66,7 +67,7 @@ create table DetalleFacturas (
 -- CRUD --
 -- crud Clientes --
 delimiter $$
-create procedure sp_CreateCliente(
+create procedure sp_AgregarCliente(
 	in p_nombreClientes varchar(64),
 	in p_email varchar(128),
 	in p_telefono varchar(12),
@@ -79,14 +80,14 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_ReadClientes()
+create procedure sp_ListarClientes()
 begin
 	select * from Clientes;
 end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_UpdateCliente(
+create procedure sp_ActualizarCliente(
 	in p_idClientes int,
 	in p_nombreClientes varchar(64),
 	in p_email varchar(128),
@@ -104,7 +105,7 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_DeleteCliente(in p_idClientes int)
+create procedure sp_EliminarCliente(in p_idClientes int)
 begin
 	delete from Clientes where idClientes = p_idClientes;
 end$$
@@ -112,7 +113,7 @@ delimiter ;
 
 -- crud Empleados --
 delimiter $$
-create procedure sp_CreateEmpleado(
+create procedure sp_AgregarEmpleado(
 	in p_nombreEmpleados varchar(64),
 	in p_puesto varchar(16),
 	in p_email varchar(128),
@@ -125,14 +126,14 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_ReadEmpleados()
+create procedure sp_ListarEmpleados()
 begin
 	select * from Empleados;
 end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_UpdateEmpleado(
+create procedure sp_ActualizarEmpleado(
 	in p_idEmpleados int,
 	in p_nombreEmpleados varchar(64),
 	in p_puesto varchar(16),
@@ -150,7 +151,7 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_DeleteEmpleado(in p_idEmpleados int)
+create procedure sp_EliminarEmpleado(in p_idEmpleados int)
 begin
 	delete from Empleados where idEmpleados = p_idEmpleados;
 end$$
@@ -158,7 +159,7 @@ delimiter ;
 
 -- crud Productos --
 delimiter $$
-create procedure sp_CreateProducto(
+create procedure sp_AgregarProducto(
 	in p_nombreProductos varchar(64),
 	in p_descripcion varchar(128),
 	in p_precio decimal(10,2)
@@ -170,14 +171,14 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_ReadProductos()
+create procedure sp_ListarProductos()
 begin
 	select * from Productos;
 end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_UpdateProducto(
+create procedure sp_ActualizarProducto(
 	in p_idProductos int,
 	in p_nombreProductos varchar(64),
 	in p_descripcion varchar(128),
@@ -193,7 +194,7 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_DeleteProducto(in p_idProductos int)
+create procedure sp_EliminarProducto(in p_idProductos int)
 begin
 	delete from Productos where idProductos = p_idProductos;
 end$$
@@ -201,7 +202,7 @@ delimiter ;
 
 -- crud Inventario --
 delimiter $$
-create procedure sp_CreateInventario(
+create procedure sp_AgregarInventario(
 	in p_idProductos int,
 	in p_cantidad int,
 	in p_estado ENUM('Disponible', 'Agotado')
@@ -213,14 +214,14 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_ReadInventario()
+create procedure sp_ListarInventario()
 begin
 	select * from Inventario;
 end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_UpdateInventario(
+create procedure sp_ActualizarInventario(
 	in p_idInventario int,
 	in p_idProductos int,
 	in p_cantidad int,
@@ -236,7 +237,7 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_DeleteInventario(in p_idInventario int)
+create procedure sp_EliminarInventario(in p_idInventario int)
 begin
 	delete from Inventario where idInventario = p_idInventario;
 end$$
@@ -244,7 +245,7 @@ delimiter ;
 
 -- crud Facturas -- 
 delimiter $$
-create procedure sp_CreateFactura(
+create procedure sp_AgregarFactura(
 	in p_fecha date,
 	in p_total decimal(10,2),
 	in p_idClientes int,
@@ -257,14 +258,14 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_ReadFacturas()
+create procedure sp_ListarFacturas()
 begin
 	select * from Facturas;
 end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_UpdateFactura(
+create procedure sp_ActualizarFactura(
 	in p_idFacturas int,
 	in p_fecha date,
 	in p_total decimal(10,2),
@@ -282,7 +283,7 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_DeleteFactura(in p_idFacturas int)
+create procedure sp_EliminarFactura(in p_idFacturas int)
 begin
 	delete from Facturas where idFacturas = p_idFacturas;
 end$$
@@ -290,7 +291,7 @@ delimiter ;
 
 -- crud Detalle de Facturas -- 
 delimiter $$
-create procedure sp_CreateDetalleFactura(
+create procedure sp_AgregarDetalleFactura(
 	in p_idFacturas int,
 	in p_idProductos int,
 	in p_cantidad int,
@@ -303,14 +304,14 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_ReadDetalleFacturas()
+create procedure sp_ListarDetalleFacturas()
 begin
 	select * from DetalleFacturas;
 end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_UpdateDetalleFactura(
+create procedure sp_ActualizarDetalleFactura(
 	in p_idDetalles int,
 	in p_idFacturas int,
 	in p_idProductos int,
@@ -328,7 +329,7 @@ end$$
 delimiter ;
 
 delimiter $$
-create procedure sp_DeleteDetalleFactura(in p_idDetalles int)
+create procedure sp_EliminarDetalleFactura(in p_idDetalles int)
 begin
 	delete from DetalleFacturas where idDetalles = p_idDetalles;
 end$$
