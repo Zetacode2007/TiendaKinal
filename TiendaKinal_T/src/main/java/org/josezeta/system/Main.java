@@ -63,4 +63,14 @@ public class Main extends Application{
             ex.printStackTrace();
         }
     }
+    
+    public void getClientesView(){
+        try {
+            MenuPrincipalController control = (MenuPrincipalController) cambiarEscena("ClienteView.fxml",400,350);
+            control.setPrincipal(this);
+        } catch (Exception e) {
+            System.out.println("Error al ir a Clientes" + e);
+            e.printStackTrace();
+        }
+    }
 }

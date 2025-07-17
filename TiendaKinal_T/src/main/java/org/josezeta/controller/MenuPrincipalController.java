@@ -63,10 +63,10 @@ public class MenuPrincipalController implements Initializable {
         if (evento.getSource() == btnCerrar) {
             System.out.println("Cerrando, adios.");
             principal.getInicioView();
-//        }else if (evento.getSource() == btnCliente) {
-//            System.out.println("Nos vamos con el Cliente");
-//            principal.getClientesView(); 
-//        }else if (evento.getSource() == btnEmpleado) {
+        }else if (evento.getSource() == btnCliente) {
+            System.out.println("Nos vamos con el Cliente");
+            principal.getClientesView(); 
+        }else if (evento.getSource() == btnEmpleado) {
 //            System.out.println("Nos vamos a Empleados");
 //            principal.getEmpleadosView();
 //        }else if (evento.getSource() == btnFactura) {

@@ -8,6 +8,6 @@
    
    <children>
       <Label layoutX="32.0" prefHeight="160.0" prefWidth="579.0" stylesheets="@inicioview.css" text="BIENVENIDO A STREETWEARKINAL" textAlignment="CENTER" textFill="WHITE" />
-      <Button fx:id="btnMenuPrincipal" layoutX="179.0" layoutY="174.0" mnemonicParsing="false" text="Ir a menu principal" />
+      <Button fx:id="btnMenuPrincipal" layoutX="179.0" layoutY="174.0" mnemonicParsing="false" onAction="#clickManejadorEventos" text="Ir a menu principal" />
    </children>
 </AnchorPane>
