@@ -66,7 +66,7 @@ public class Main extends Application{
     
     public void getClientesView(){
         try {
-            MenuPrincipalController control = (MenuPrincipalController) cambiarEscena("ClienteView.fxml",400,350);
+            MenuPrincipalController control = (MenuPrincipalController) cambiarEscena("ClientesView.fxml",400,350);
             control.setPrincipal(this);
         } catch (Exception e) {
             System.out.println("Error al ir a Clientes" + e);

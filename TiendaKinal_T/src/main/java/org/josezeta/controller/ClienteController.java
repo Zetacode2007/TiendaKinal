@@ -97,17 +97,22 @@ public class ClienteController implements Initializable {
     }
 
     public void getClienteTextField() {
-        //obtener un modelo-> Cliente
-        Cliente clienteSeleccionado = tablaClientes.getSelectionModel().getSelectedItem();
-        if (clienteSeleccionado != null) {
-            //configurar los atributos del modelo en textfield
-            txtID.setText(String.valueOf(clienteSeleccionado.getCodigoCliente()));
-            txtNombre.setText(clienteSeleccionado.getNombreCliente());
-            txtTelefono.setText(clienteSeleccionado.getTelefono());
-            txtCorreo.setText(clienteSeleccionado.getCorreo());
-            txtDPI.setText(clienteSeleccionado.getDPI());
-        }
+    if (tablaClientes == null) {
+        System.out.println("tablaClientes es null");
+        return;
     }
+    Cliente clienteSeleccionado = tablaClientes.getSelectionModel().getSelectedItem();
+    if (clienteSeleccionado != null) {
+        txtID.setText(String.valueOf(clienteSeleccionado.getCodigoCliente()));
+        txtNombre.setText(clienteSeleccionado.getNombreCliente());
+        txtTelefono.setText(clienteSeleccionado.getTelefono());
+        txtCorreo.setText(clienteSeleccionado.getCorreo());
+        txtDPI.setText(clienteSeleccionado.getDPI());
+    } else {
+        System.out.println("No hay cliente seleccionado");
+        limpiarTexto();
+    }
+}
 
     public void setFormatoColumnaModelo() {
         //formato de celdas -> expresiones lamba;
