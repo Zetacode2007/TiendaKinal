@@ -40,7 +40,7 @@
         </rowConstraints>
          <children>
             <Button fx:id="btnAnterior" maxWidth="85.0" mnemonicParsing="false" onAction="#btnAnteriorAccion" prefHeight="65.0" text="Atras" />
-            <Button fx:id="btnSiguiente" maxWidth="85.0" mnemonicParsing="false" onAction="#btnSiguienteAccion" prefHeight="65.0" prefWidth="90.0" text="Siguiente" GridPane.columnIndex="1" />
+            <Button fx:id="btnSiguiente" maxWidth="85.0" mnemonicParsing="false" onAction="#btnSiguienteAccion" prefHeight="65.0" text="Siguiente" GridPane.columnIndex="1" />
             <Button fx:id="btnEditar" maxWidth="85.0" mnemonicParsing="false" onAction="#cambiarEdicionCliente" prefHeight="65.0" text="Editar" GridPane.columnIndex="4" />
             <Button fx:id="btnNuevo" maxWidth="85.0" mnemonicParsing="false" onAction="#cambiarNuevoCliente" prefHeight="65.0" text="Nuevo+" GridPane.columnIndex="3" />
             <Button fx:id="btnEliminar" maxWidth="85.0" mnemonicParsing="false" onAction="#cambiarCancelarEliminar" prefHeight="65.0" prefWidth="86.0" text="Eliminar" GridPane.columnIndex="5" />

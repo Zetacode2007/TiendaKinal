@@ -67,9 +67,9 @@ public class MenuPrincipalController implements Initializable {
             System.out.println("Nos vamos con el Cliente");
             principal.getClientesView(); 
         }else if (evento.getSource() == btnEmpleado) {
-//            System.out.println("Nos vamos a Empleados");
-//            principal.getEmpleadosView();
-//        }else if (evento.getSource() == btnFactura) {
+            System.out.println("Nos vamos a Empleados");
+            principal.getEmpleadosView();
+        }else if (evento.getSource() == btnFactura) {
 //            System.out.println("Nos vamos a Facturas");
 //            principal.getFacturasView();
 //        } 

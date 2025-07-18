@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.josezeta.controller.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josezeta.controller.MenuPrincipalController">
     <stylesheets>
         <URL value="@menuprincipalview.css" />
     </stylesheets>
@@ -13,5 +13,6 @@
       <Label layoutX="22.0" layoutY="14.0" text="Menu Principal" />
       <Button fx:id="btnCliente" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#clickManejadorEventos" text="Clientes" />
       <Button fx:id="btnCerrar" layoutX="495.0" layoutY="19.0" mnemonicParsing="false" onAction="#clickManejadorEventos" text="Cerrar" />
+      <Button fx:id="btnEmpleado" layoutX="102.0" layoutY="52.0" mnemonicParsing="false" onAction="#clickManejadorEventos" text="Empleados" />
    </children>
 </AnchorPane>

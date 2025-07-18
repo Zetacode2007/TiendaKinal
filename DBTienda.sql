@@ -16,7 +16,6 @@ create table Empleados (
     nombreEmpleados varchar(64),
     puesto varchar(16),
     email varchar(128),
-    estado ENUM('activo', 'Inactivo') default 'activo',
     primary key pk_empleados (idEmpleados)
 );
 
@@ -86,6 +85,7 @@ begin
 	select * from Clientes;
 end$$
 delimiter ;
+call sp_ListarClientes();
 
 delimiter $$
 create procedure sp_ActualizarCliente(
@@ -117,14 +117,14 @@ delimiter $$
 create procedure sp_AgregarEmpleado(
 	in p_nombreEmpleados varchar(64),
 	in p_puesto varchar(16),
-	in p_email varchar(128),
-	in p_estado ENUM('activo', 'Inactivo')
+	in p_email varchar(128)
 )
 begin
-	insert into Empleados (nombreEmpleados, puesto, email, estado)
-	values (p_nombreEmpleados, p_puesto, p_email, p_estado);
+	insert into Empleados (nombreEmpleados, puesto, email)
+	values (p_nombreEmpleados, p_puesto, p_email);
 end$$
 delimiter ;
+call sp_AgregarEmpleado("Gerardo Zeta","Cajero","gerardozzz@gmail.com");
 
 delimiter $$
 create procedure sp_ListarEmpleados()
@@ -132,21 +132,20 @@ begin
 	select * from Empleados;
 end$$
 delimiter ;
+call sp_ListarEmpleados();
 
 delimiter $$
 create procedure sp_ActualizarEmpleado(
 	in p_idEmpleados int,
 	in p_nombreEmpleados varchar(64),
 	in p_puesto varchar(16),
-	in p_email varchar(128),
-	in p_estado ENUM('activo', 'Inactivo')
+	in p_email varchar(128)
 )
 begin
 	update Empleados
 	set nombreEmpleados = p_nombreEmpleados,
 		puesto = p_puesto,
-		email = p_email,
-		estado = p_estado
+		email = p_email
 	where idEmpleados = p_idEmpleados;
 end$$
 delimiter ;

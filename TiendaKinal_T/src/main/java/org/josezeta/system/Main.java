@@ -9,6 +9,7 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.josezeta.controller.ClienteController;
+import org.josezeta.controller.EmpleadoController;
 import org.josezeta.controller.InicioController;
 import org.josezeta.controller.MenuPrincipalController;
 
@@ -71,6 +72,16 @@ public class Main extends Application {
             control.setPrincipal(this);
         } catch (Exception e) {
             System.out.println("Error al ir a Clientes" + e);
+            e.printStackTrace();
+        }
+    }
+    
+    public void getEmpleadosView(){
+        try {
+            EmpleadoController control = (EmpleadoController) cambiarEscena("EmpleadoView.fxml", 1000, 705);
+            control.setPrincipal(this);
+        } catch (Exception e) {
+            System.out.println("Error al ir a Empleado" + e);
             e.printStackTrace();
         }
     }
