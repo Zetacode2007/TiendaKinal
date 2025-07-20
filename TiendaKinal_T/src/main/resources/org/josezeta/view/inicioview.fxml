@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@inicioview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josezeta.controller.InicioController">
    
    <children>
-      <Label layoutX="32.0" prefHeight="160.0" prefWidth="579.0" stylesheets="@inicioview.css" text="BIENVENIDO A STREETWEARKINAL" textAlignment="CENTER" textFill="WHITE" />
-      <Button fx:id="btnMenuPrincipal" layoutX="179.0" layoutY="174.0" mnemonicParsing="false" onAction="#clickManejadorEventos" text="Ir a menu principal" />
+      <Button fx:id="btnMenuPrincipal" layoutX="214.0" layoutY="243.0" mnemonicParsing="false" onAction="#clickManejadorEventos" stylesheets="@inicioview.css" text="Ir a menu principal" />
+      <ImageView fitHeight="113.0" fitWidth="350.0" layoutX="64.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/KK.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="189.0" layoutX="310.0" layoutY="35.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" rotate="-13.6">
+         <image>
+            <Image url="@../images/kk2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

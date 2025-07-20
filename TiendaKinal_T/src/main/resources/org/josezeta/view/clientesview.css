@@ -1,58 +1,66 @@
 .root {
-    -fx-background-color: linear-gradient(to bottom right, #e6f0ff, #f7f5ff);
+    -fx-background-color: linear-gradient(to bottom right, #7b2ff7, #fbb1b1); 
     -fx-font-family: "Verdana", sans-serif;
     -fx-padding: 20;
+    -fx-text-fill: #3b0a45;
 }
 
-/* ===== TEXTFIELD ===== */
 .text-field {
     -fx-background-radius: 15;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #fce6e6; 
     -fx-border-radius: 15;
-    -fx-border-color: #c8d6e5;
+    -fx-border-color: #a875a8;
     -fx-border-width: 1;
     -fx-padding: 10;
     -fx-font-size: 13px;
-    -fx-text-fill: #444;
+    -fx-text-fill: #3b0a45;
 }
 
-/* ===== BUTTONS ===== */
+.text-block {
+    -fx-background-color: linear-gradient(to right, #fbc2eb, #a6c1ee); /* efecto rosa-azul pastel */
+    -fx-background-radius: 10;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.4, 0, 2);
+    -fx-border-color: #2a003f33;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
+}
+
 .button {
     -fx-font-family: "Segoe UI Semibold", sans-serif;
     -fx-font-size: 10px;
     -fx-background-radius: 20;
-    -fx-background-color: #c9cfff;
-    -fx-text-fill: #333;
+    -fx-background-color: linear-gradient(to right, #fbb1b1, #7b2ff7); 
+    -fx-text-fill: #3b0a45; 
     -fx-font-weight: bold;
     -fx-cursor: hand;
     -fx-padding: 10 20;
-    -fx-border-color: #b0b8f2;
+    -fx-border-color: #a875a8; 
     -fx-border-radius: 20;
     -fx-border-width: 1;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 6, 0.2, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(59, 10, 69, 0.2), 6, 0.2, 0, 2);
     -fx-transition: all 0.3s ease;
 }
 
 .button:hover {
-    -fx-background-color: #b0b8f2;
+    -fx-background-color: linear-gradient(to right, #7b2ff7, #fbb1b1); 
 }
 
 .button:pressed {
-    -fx-background-color: #a6acdf;
+    -fx-background-color: #a563a5; 
     -fx-translate-y: 2;
-    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 1);
+    -fx-effect: innershadow(gaussian, rgba(59, 10, 69, 0.3), 4, 0.5, 0, 1);
 }
 
-/* ===== TABLE VIEW ===== */
 .table-view {
     -fx-background-color: transparent;
-    -fx-table-cell-border-color: #e0e0f0;
+    -fx-table-cell-border-color: #f3c8c8;
     -fx-border-color: transparent;
     -fx-border-radius: 15;
 }
 
 .table-view .column-header-background {
-    -fx-background-color: #d8e1ff;
+    -fx-background-color: #fbb1b1;
     -fx-background-radius: 10 10 0 0;
 }
 
@@ -62,23 +70,22 @@
 }
 
 .table-view .table-row-cell {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #f0f0f0;
+    -fx-background-color: #fce6e6;
+    -fx-border-color: #f7c8c8;
 }
 
 .table-view .table-row-cell:odd {
-    -fx-background-color: #f5f7ff;
+    -fx-background-color: #f9dada;
 }
 
 .table-view .table-row-cell:selected {
-    -fx-background-color: #cfe2ff;
-    -fx-text-fill: #000000;
+    -fx-background-color: #a563a5;
+    -fx-text-fill: #ffffff;
 }
 
-/* ===== SCROLLBAR ===== */
 .scroll-bar:vertical .thumb,
 .scroll-bar:horizontal .thumb {
-    -fx-background-color: #d4d4f5;
+    -fx-background-color: #a875a8;
     -fx-background-radius: 10;
 }
 

@@ -1,7 +1,51 @@
-/*
- * Empty Stylesheet file.
- */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #5f2c82, #49a09d); /* morado a azul */
+    -fx-font-family: "Segoe UI", "Arial", "Tahoma", sans-serif;
+    -fx-text-fill: #2a003f;
+}
 
-.mainFxmlClass {
+.text-block {
+    -fx-background-color: linear-gradient(to right, #fbc2eb, #a6c1ee); /* efecto rosa-azul pastel */
+    -fx-background-radius: 10;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.4, 0, 2);
+    -fx-border-color: #2a003f33;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
+}
 
+.label, .text {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a003f;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+    -fx-text-fill: #2a003f;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 10 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0.5, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #fdb99b, #cf8bf3, #a770ef);
+}
+
+.button:pressed {
+    -fx-translate-y: 2;
+    -fx-background-color: #b57edc;
+    -fx-effect: innershadow(gaussian, #2a003f, 4, 0.5, 0, 1);
+}
+
+.text-field {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #2a003f;
+    -fx-border-color: #2a003f;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 6 10;
 }

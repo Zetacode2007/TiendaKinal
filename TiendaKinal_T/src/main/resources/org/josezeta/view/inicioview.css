@@ -3,8 +3,8 @@
  */
 
 .root {
-    -fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); /* estilo oscuro neón */
-    -fx-font-family: "Verdana";
+    -fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); 
+    -fx-font-family: "Baguet Script Regular";
     -fx-text-fill: #ffffff;
 }
 
@@ -39,6 +39,7 @@
 
 .button {
     -fx-background-color: linear-gradient(to right, #ff00cc, #333399);
+    -fx-font-family: "Calibri";
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 15;
@@ -76,7 +77,7 @@
 }
 
 .button:pressed {
-    -fx-translate-y: 2px; /* lo mueve hacia abajo */
-    -fx-background-color: #cc66ff; /* color más oscuro o distinto */
+    -fx-translate-y: 2px; 
+    -fx-background-color: #cc66ff; 
     -fx-effect: innershadow(gaussian, black, 3, 0.3, 0, 1);
 }
